@@ -48,3 +48,23 @@ problem2_df = tibble(
 )
 ```
 
+## get means
+```{r}
+summary(problem2_df)
+```
+
+samp is numeric, so I got a full numeric summary. The mean is 0.1322.
+samp_pos is logical, so R just counts FALSE and TRUE. 
+vec_char is character, so R only describe the text. There's no mean reported.
+vec_factor is factor), and R counts how many values are in each level. There's no mean here either.
+
+###cross check with mean()
+
+```{r take_means}
+mean(pull(problem2_df, samp))
+mean(pull(problem2_df, samp_pos))
+mean(pull(problem2_df, vec_char))
+mean(pull(problem2_df, vec_factor))
+```
+
+Yes. the last two returns NA.
