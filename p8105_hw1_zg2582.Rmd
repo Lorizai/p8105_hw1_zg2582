@@ -68,3 +68,15 @@ mean(pull(problem2_df, vec_factor))
 ```
 
 Yes. the last two returns NA.
+
+##convert variables from one type to another
+
+```{r, eval = FALSE}
+as.numeric(pull(problem2_df, samp_pos))
+as.numeric(pull(problem2_df, vec_char))
+as.numeric(pull(problem2_df, vec_factor))
+```
+
+What I observed: the logical converted to 0 or 1. Character is all NA, since letters
+can't be read as numbers. And factor changed into numbers, but they are arbitrary labels, 
+so there's still no mean can be calculated. 
