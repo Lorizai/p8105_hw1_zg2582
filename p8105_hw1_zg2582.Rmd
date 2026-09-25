@@ -21,6 +21,7 @@ summary(penguins)
 ```
 
 this dataset contains 344 rows and 8 columns. The variables are: species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, year. The mean of flipper length is 200.9.
+please see more important values in message. 
 
 ## scatterplot of flipper_length_mm vs. bill_length_mm
 
@@ -32,7 +33,7 @@ ggsave("penguin_scatterplot.pdf")
 ```
 
 There is a positive relationship overall, penguins with longer bills tend to have longer flippers.
-And the three species form separate clusters.
+And the three species form separate clusters. Adelie has short bills and flippers, Chinstrap has long bills and medium flippers, Gentoo has long bills and the longest flippers. 2 penguins with missing values weren't plotted.
 
 # Problem 2
 
@@ -56,18 +57,18 @@ summary(problem2_df)
 samp is numeric, so I got a full numeric summary. The mean is 0.1322.
 samp_pos is logical, so R just counts FALSE and TRUE. 
 vec_char is character, so R only describe the text. There's no mean reported.
-vec_factor is factor), and R counts how many values are in each level. There's no mean here either.
+vec_factor is factor, and R counts how many values are in each level. There's no mean here either.
 
 ###cross check with mean()
 
-```{r take_means}
+```{r}
 mean(pull(problem2_df, samp))
 mean(pull(problem2_df, samp_pos))
 mean(pull(problem2_df, vec_char))
 mean(pull(problem2_df, vec_factor))
 ```
 
-Yes. the last two returns NA.
+the mean of last two returned NA, matchs what i got from summary().
 
 ##convert variables from one type to another
 
@@ -77,6 +78,6 @@ as.numeric(pull(problem2_df, vec_char))
 as.numeric(pull(problem2_df, vec_factor))
 ```
 
-What I observed: the logical converted to 0 or 1. Character is all NA, since letters
-can't be read as numbers. And factor changed into numbers, but they are arbitrary labels, 
-so there's still no mean can be calculated. 
+What I observed: the logical mean works because R turns TRUE and FALSE into 1 and 0. 
+The character mean fails because letters can't become numbers. The factor mean fails because, even though factors are stored as numbers, those codes are category labels.
+
