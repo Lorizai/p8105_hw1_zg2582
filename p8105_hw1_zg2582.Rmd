@@ -13,5 +13,12 @@ library(tidyverse)
 
 ```{r}
 data("penguins", package = "palmerpenguins")
+names(penguins)
+nrow(penguins)
+ncol(penguins)
+summary(penguins)
 ```
 
+## this dataset contains 344 rows and 8 columns. The variables are:
+## species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, year. 
+## The mean of flipper length is 200.9.
