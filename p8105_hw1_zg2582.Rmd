@@ -35,3 +35,16 @@ There is a positive relationship overall, penguins with longer bills tend to hav
 And the three species form separate clusters.
 
 # Problem 2
+
+## create df
+```{r}
+set.seed(1)
+problem2_df = tibble(
+  samp = rnorm(10),
+  samp_pos = samp > 0,
+  vec_char = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+  vec_factor = factor(c("low", "low", "low", "mid", "mid", "mid", 
+                        "high", "high", "high", "high"))
+)
+```
+
