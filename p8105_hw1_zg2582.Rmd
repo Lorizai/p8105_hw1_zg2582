@@ -9,6 +9,7 @@ date: "2026-09-25"
 library(tidyverse)
 ```
 
+# Problem 1
 ## load penguins dataset
 
 ```{r}
@@ -19,14 +20,18 @@ ncol(penguins)
 summary(penguins)
 ```
 
-## this dataset contains 344 rows and 8 columns. The variables are:
-### species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, year. 
-## The mean of flipper length is 200.9.
+this dataset contains 344 rows and 8 columns. The variables are: species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, year. The mean of flipper length is 200.9.
 
 ## scatterplot of flipper_length_mm vs. bill_length_mm
 
 ```{r}
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + 
   geom_point()
+
+ggsave("penguin_scatterplot.pdf")
 ```
 
+There is a positive relationship overall, penguins with longer bills tend to have longer flippers.
+And the three species form separate clusters.
+
+# Problem 2
